@@ -1,3 +1,4 @@
+using Example.Api;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning.Conventions;
 using Microsoft.Extensions.Options;
@@ -21,7 +22,11 @@ builder.Services.AddVersionedApiExplorer(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-builder.Services.AddSwaggerGen(options => options.OperationFilter<SwaggerDefaultValues>());
+builder.Services.AddSwaggerGen(options =>
+{
+    options.DocumentFilter<SwaggerDocumentFilter>();
+    options.OperationFilter<SwaggerDefaultValues>();
+});
 
 var app = builder.Build();
 
