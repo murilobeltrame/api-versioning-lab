@@ -17,3 +17,9 @@ cd environment
 terraform init
 terraform apply
 ```
+
+## Description
+
+`src/Example.Api` holds `v1` and `v2` of `weatherforecast` API.<br />
+`src/Example.Api.v2` holds `v3` of that API.<br />
+Both project - or all API versions - are deployed on APIM following the declared version.
