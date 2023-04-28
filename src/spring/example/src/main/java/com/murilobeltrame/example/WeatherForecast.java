@@ -21,7 +21,7 @@ public class WeatherForecast {
     @Setter
     private String summary;
 
-    WeatherForecast(Instant date, int temperatureC, String summary){
+    public WeatherForecast(Instant date, int temperatureC, String summary){
         setDate(date);
         setTemperatureC(temperatureC);
         setSummary(summary);

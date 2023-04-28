@@ -1,5 +1,6 @@
-package com.murilobeltrame.example;
+package com.murilobeltrame.example.v2;
 
+import com.murilobeltrame.example.WeatherForecast;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,15 +12,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class WeatherForecastController {
+public class WeatherForecastControllerV2 {
 
     private final String[] summaries = new String[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+            {
+                    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            };
 
-    @GetMapping("/weather-forecasts")
-    List<WeatherForecast> get() throws NoSuchAlgorithmException {
+    @GetMapping("v2/weather-forecasts")
+    List<WeatherForecast> getV1() throws NoSuchAlgorithmException {
         var forecasts = new ArrayList<WeatherForecast>();
         var random = SecureRandom.getInstanceStrong();
         for (var i=0; i< 5; i++) {
