@@ -73,4 +73,5 @@ do
 
 done
 
-// TODO: Deploy Java Based APIs
+# TODO: Deploy Java Based APIs
+# echo "JavaExample" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]'
