@@ -24,7 +24,6 @@ builder.Services.AddVersionedApiExplorer(options =>
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.DocumentFilter<SwaggerDocumentFilter>();
     options.OperationFilter<SwaggerDefaultValues>();
 });
 
