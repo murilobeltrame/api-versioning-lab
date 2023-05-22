@@ -1,0 +1,6 @@
+api:
+  name: NetCore Example
+  path: netcore-example
+  versions:
+    - name: v3
+      backend: https://localhost/v3
