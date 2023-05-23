@@ -1,0 +1,8 @@
+api:
+  name: Spring Example
+  path: spring-example
+  versions:
+    - name: v1
+      backend: https://localhost/v1
+    - name: v2
+      backend: https://localhost/v2
