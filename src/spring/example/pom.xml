@@ -53,22 +53,24 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>org.springdoc</groupId>
-				<artifactId>springdoc-openapi-maven-plugin</artifactId>
-				<version>0.2</version>
+				<groupId>io.swagger.codegen.v3</groupId>
+				<artifactId>swagger-codegen-maven-plugin</artifactId>
+				<version>3.0.27</version>
 				<executions>
+					<!-- Define multiple executions, one for each API version -->
 					<execution>
-						<phase>integration-test</phase>
+						<id>generate-swagger-v1</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
+						<configuration>
+							<!-- Specify the API version-specific configuration -->
+							<inputSpec>http://localhost:8080/v1/api-docs</inputSpec>
+							<language>swagger-yaml</language>
+							<output>${project.build.directory}/swagger-v1.yml</output>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<apiDocsUrl>http://localhost:8080/v3/api-docs/v1</apiDocsUrl>
-					<outputFileName>openapi.v1.json</outputFileName>
-					<outputDir>${project.build.directory}</outputDir>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

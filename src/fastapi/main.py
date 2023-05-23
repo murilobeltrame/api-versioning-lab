@@ -17,13 +17,13 @@ def get():
         summary=summaries[random.randint(0, len(summaries) - 1)]) for i in range(1, 5)]
 
 
-@app.get('/weatherforecast')
+@app.get('/v1/weatherforecast')
 @version(1)
 async def get_weatherforecast_v1():
     return get()
 
 
-@app.get('/weatherforecast')
+@app.get('/v2/weatherforecast')
 @version(2)
 async def get_weatherforecast_v2():
     return get()
