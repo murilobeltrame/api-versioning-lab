@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RESOURCE_NAME=$1
 SERVICE_NAME=$2
 
